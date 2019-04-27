@@ -17,4 +17,8 @@ public class MeatPartController : MonoBehaviour
 		rigidbody.velocity = Vector3.zero;
 		transform.SetParent(gameTransform);
 	}
+
+	public void EnableGravity (bool enable) {
+		rigidbody.useGravity = enable;
+	}
 }

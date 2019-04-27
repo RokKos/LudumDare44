@@ -21,6 +21,7 @@ public class DropingController : MonoBehaviour
 			meatPart.transform.localPosition = Vector3.zero;
 			meatPart.transform.SetParent(gameTransform);
 			meatPart.Setup(movingDir);
+			meatPart.EnableGravity(true);
 		}
 
 		transform.position += movingDir * Time.deltaTime;
