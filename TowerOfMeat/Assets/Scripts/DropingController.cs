@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class DropingController : MonoBehaviour
 {
-	[SerializeField] List<MeatPartController> meatPartPrefab;
+	//[SerializeField] List<MeatPartController> meatPartPrefab;
 	[SerializeField] Transform gameTransform;
+	[SerializeField] generateBlock GenerateBlock;
 
 	[SerializeField] float movingBound;
-
-	[SerializeField] string s;
 
 	private Vector3 movingDir = Vector3.right;
 
@@ -17,7 +16,8 @@ public class DropingController : MonoBehaviour
 	void Update()
     {
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			MeatPartController meatPart = Instantiate(meatPartPrefab[0], transform);
+			MeatPartController meatPart = GenerateBlock.GetBlock();
+			meatPart.transform.SetParent(transform);
 			meatPart.transform.localPosition = Vector3.zero;
 			meatPart.Setup(gameTransform);
 		}
