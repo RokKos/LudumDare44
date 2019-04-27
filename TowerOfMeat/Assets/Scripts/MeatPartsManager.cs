@@ -6,7 +6,7 @@ public class MeatPartsManager : MonoBehaviour
 {
 
 	[SerializeField] generateBlock GenerateBlock;
-	[SerializeField] GameObject HighLine;
+	[SerializeField] HighLine highLine;
 	private List<MeatPartController> meatPartsInScene = new List<MeatPartController>();
 
 	delegate void MeatSucces (bool success);
@@ -14,16 +14,16 @@ public class MeatPartsManager : MonoBehaviour
 
 	private void Start () {
 		meatSucces += GenerateBlock.SetLastSuccess;
-		HighLine.SetActive(false);
+		highLine.gameObject.SetActive(false);
 	}
 
 
 	private void Update () {
 		if (meatPartsInScene.Count > 0) {
-			HighLine.SetActive(true);
+			highLine.gameObject.SetActive(true);
 			
-			Vector3 topPos = new Vector3(0, GetMaxMeatHeight(), 0);
-			HighLine.transform.position = topPos;
+			Vector3 topPos = new Vector3(0, GetMaxMeatHeight() + highLine.GetExtendsHeight(), 0);
+			highLine.transform.position = topPos;
 		}
 	}
 	public bool AddMeatPart (MeatPartController meatPart) {
