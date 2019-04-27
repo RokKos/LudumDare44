@@ -42,7 +42,7 @@ public class hitBoard : MonoBehaviour
             
             //moveBoard = true;
         }
-
+        /*
         if(rotatingLeft){
             board.transform.Rotate(0,0.15f,0, Space.Self);
             countLeft++;
@@ -60,7 +60,7 @@ public class hitBoard : MonoBehaviour
             rotatingLeft = false;
             countLeft = 0;
         }
-        
+        */
         if(moveBoard){
             //Debug.Log(moveBoard);
             Vector3 cubePos = cube.transform.position;
