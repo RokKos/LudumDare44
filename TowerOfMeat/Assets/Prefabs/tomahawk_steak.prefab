@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6964351209718698815}
   - component: {fileID: 8508393893539965902}
   - component: {fileID: 7187031499201577458}
-  - component: {fileID: 186799354086845826}
+  - component: {fileID: 6363220129545294179}
   m_Layer: 0
   m_Name: tomahawk_steak
   m_TagString: Untagged
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3281882545848797680}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &434419247316604921
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3281882545848797680}
-  m_Mesh: {fileID: 4300000, guid: 5823b0f8d9b9d884a825b1c6e7e7b1ea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e44eb6a9669ba6b43bf9d8fc2a6b9777, type: 3}
 --- !u!23 &6964351209718698815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &186799354086845826
+--- !u!65 &6363220129545294179
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,5 +121,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.009197465, y: 0.017744808, z: 0.0014273392}
-  m_Center: {x: -0.017299907, y: -0.004164501, z: -0.0026787037}
+  m_Size: {x: 0.009194812, y: 0.017677264, z: 0.0014273392}
+  m_Center: {x: 0.00017009978, y: 0.0012687123, z: -1.4551912e-10}
