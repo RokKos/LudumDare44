@@ -19,13 +19,7 @@ public class MeatPartController : MonoBehaviour {
 	}
 
 	private void OnCollisionEnter (Collision collision) {
-		if (!firstHit && collision.collider.tag == kAltarTag) {
-			// This will fail
-			firstHit = meatPartsManager.AddMeatPart(this);
-		}
-
-
-		if (firstHit) {
+		if (firstHit || collision.collider.tag == kAltarTag) {
 			rigidbody.velocity = Vector3.zero;
 			meatPartsManager.AddMeatPart(this);
 			firstHit = false;

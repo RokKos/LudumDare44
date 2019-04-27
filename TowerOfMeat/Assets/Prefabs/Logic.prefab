@@ -46,9 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalBlocks:
   - {fileID: 2024312461845068824, guid: 3f1694bab3243a84c8eece062faa63dc, type: 3}
+  - {fileID: 6587026588615248137, guid: 52da85e41d2c9ac479ef059c76003a1b, type: 3}
+  - {fileID: 8508393893539965902, guid: 5f5d9800754ca7a49b13ff629445aadc, type: 3}
   humanBlocks:
   - {fileID: 3435274486040540778, guid: 240977fc50612734e8d8babf4b195dec, type: 3}
   - {fileID: 657597486, guid: d96bc5cdef56beb48ba9dea94ca675f9, type: 3}
+  - {fileID: 3442013647113232453, guid: 09ab1d47aed28b248b3135835b2e90aa, type: 3}
 --- !u!114 &5321372495971140167
 MonoBehaviour:
   m_ObjectHideFlags: 0
