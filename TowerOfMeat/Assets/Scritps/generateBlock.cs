@@ -33,12 +33,16 @@ public class generateBlock : MonoBehaviour
 	}
 
 	public void SetLastSuccess (bool success) {
-		lastSuccess = success;
-		if (!lastSuccess) {
+		
+		if (lastSuccess != success && success) {
+			Destroy(next.gameObject);
+			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)]);
+		} else if (lastSuccess != success && !success) {
 			Destroy(next.gameObject);
 			next = Instantiate(humanBlocks[Random.Range(0, humanBlocks.Count)]);
-			PrepareNextMeatPart();
 		}
+		lastSuccess = success;
+		PrepareNextMeatPart();
 	}
 
 	public void PrepareNextMeatPart () {

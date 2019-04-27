@@ -10,6 +10,8 @@ public class MeatPartController : MonoBehaviour {
 	private MeatPartsManager meatPartsManager;
 	private bool firstHit = true;
 
+	private const string kAltarTag = "Altar";
+
 	public void Setup (Vector3 movingDir, MeatPartsManager _meatPartsManager) {
 		rigidbody.AddForce(movingDir, ForceMode.Impulse);
 		meatPartsManager = _meatPartsManager;
@@ -17,6 +19,12 @@ public class MeatPartController : MonoBehaviour {
 	}
 
 	private void OnCollisionEnter (Collision collision) {
+		if (!firstHit && collision.collider.tag == kAltarTag) {
+			// This will fail
+			firstHit = meatPartsManager.AddMeatPart(this);
+		}
+
+
 		if (firstHit) {
 			rigidbody.velocity = Vector3.zero;
 			meatPartsManager.AddMeatPart(this);
