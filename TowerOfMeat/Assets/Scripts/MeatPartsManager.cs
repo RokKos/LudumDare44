@@ -7,6 +7,8 @@ public class MeatPartsManager : MonoBehaviour
 
 	[SerializeField] generateBlock GenerateBlock;
 	[SerializeField] HighLine highLine;
+	[SerializeField] float bufferOffset;
+
 	private List<MeatPartController> meatPartsInScene = new List<MeatPartController>();
 
 	delegate void MeatSucces (bool success);
@@ -35,7 +37,7 @@ public class MeatPartsManager : MonoBehaviour
 
 
 		MeatPartController topMeatPart = meatPartsInScene[meatPartsInScene.Count - 1];
-		bool isOnTop = GetMaxMeatHeight() < meatPart.GetTopPointOfMeat();
+		bool isOnTop = GetMaxMeatHeight() < meatPart.GetTopPointOfMeat() + bufferOffset;
 		if (isOnTop) {
 			meatPartsInScene.Add(meatPart);
 			meatSucces(true);
