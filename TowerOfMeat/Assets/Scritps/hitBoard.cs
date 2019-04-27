@@ -26,16 +26,16 @@ public class hitBoard : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
 
-            board.AddForceAtPosition(Vector3.forward * thrust,  Camera.main.ScreenToWorldPoint(mousePos) );
+            board.AddForceAtPosition(Vector3.forward * thrust,  Camera.main.ScreenToViewportPoint(mousePos) );
             //Debug.Log(Camera.main.ScreenToViewportPoint(mousePos)[0]);
             if(Camera.main.ScreenToViewportPoint(mousePos)[0]<0.4){
                 //Debug.Log("rotate left");
-                rotatingLeft = true;
+                //rotatingLeft = true;
                 //board.transform.Rotate(0,1,0, Space.Self);
             }
             else if(Camera.main.ScreenToViewportPoint(mousePos)[0]>0.6){
                 //Debug.Log("rotate right");
-                rotatingRight = true;
+                //rotatingRight = true;
                 //board.transform.Rotate(0,-1,0, Space.Self);
             }
             
@@ -52,11 +52,11 @@ public class hitBoard : MonoBehaviour
             countRight++;
         }
 
-        if(countRight>=100){
+        if(countRight>=25){
             countRight = 0;
             rotatingRight = false;
         }
-        if(countLeft>=100){
+        if(countLeft>=25){
             rotatingLeft = false;
             countLeft = 0;
         }
