@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeatPartController : MonoBehaviour
-{
+public class MeatPartController : MonoBehaviour {
 
 	[SerializeField] Rigidbody rigidbody;
 	[SerializeField] MeshRenderer mr;

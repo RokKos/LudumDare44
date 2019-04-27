@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5321372495971140162}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09052b31a67be5489f19b1e87987f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allBlocks:
-  - {fileID: 657597486, guid: d96bc5cdef56beb48ba9dea94ca675f9, type: 3}
-  - {fileID: 3435274486040540778, guid: 240977fc50612734e8d8babf4b195dec, type: 3}
+  normalBlocks:
   - {fileID: 2024312461845068824, guid: 3f1694bab3243a84c8eece062faa63dc, type: 3}
+  humanBlocks:
+  - {fileID: 3435274486040540778, guid: 240977fc50612734e8d8babf4b195dec, type: 3}
+  - {fileID: 657597486, guid: d96bc5cdef56beb48ba9dea94ca675f9, type: 3}
 --- !u!114 &5321372495971140167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,3 +61,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8e587b73bc33f45bc73759b06c77df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GenerateBlock: {fileID: 5321372495971140161}
