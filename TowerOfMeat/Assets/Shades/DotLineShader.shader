@@ -55,7 +55,7 @@
                 // sample the texture
                 fixed4 area = tex2D(_MainTex, i.uv);
                 fixed4 edge = tex2D(_RoundEdges, i.uv);
-                return fixed4(_Color.xyz, area.r * edge.r);
+                return fixed4(_Color.xyz, area.r);
                 
             }
             ENDCG
