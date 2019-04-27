@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6369765818929704433}
+  mr: {fileID: 3959652447982001824}
 --- !u!54 &6369765818929704433
 Rigidbody:
   m_ObjectHideFlags: 0

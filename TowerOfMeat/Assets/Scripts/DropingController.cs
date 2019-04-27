@@ -7,6 +7,8 @@ public class DropingController : MonoBehaviour
 	//[SerializeField] List<MeatPartController> meatPartPrefab;
 	[SerializeField] Transform gameTransform;
 	[SerializeField] generateBlock GenerateBlock;
+	[SerializeField] MeatPartsManager meatPartsManager;
+
 
 	[SerializeField] float movingBound;
 
@@ -20,7 +22,7 @@ public class DropingController : MonoBehaviour
 			meatPart.transform.SetParent(transform);
 			meatPart.transform.localPosition = Vector3.zero;
 			meatPart.transform.SetParent(gameTransform);
-			meatPart.Setup(movingDir);
+			meatPart.Setup(movingDir, meatPartsManager);
 			meatPart.EnableGravity(true);
 		}
 
@@ -31,3 +33,4 @@ public class DropingController : MonoBehaviour
 		}
     }
 }
+
