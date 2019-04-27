@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5321372495971140160}
   - component: {fileID: 5321372495971140161}
   - component: {fileID: 5321372495971140167}
+  - component: {fileID: 1153985426}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -66,3 +67,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GenerateBlock: {fileID: 5321372495971140161}
   highLine: {fileID: 0}
+  bufferOffset: 0.5
+--- !u!114 &1153985426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321372495971140162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5926284c434dc5a41a2c11929a096592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 11400000, guid: 6eb50767ba25e3f4b9f0f7b9767bd912, type: 2}

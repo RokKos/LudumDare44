@@ -8,23 +8,31 @@ public class DropingController : MonoBehaviour
 	[SerializeField] Transform gameTransform;
 	[SerializeField] generateBlock GenerateBlock;
 	[SerializeField] MeatPartsManager meatPartsManager;
+	[SerializeField] GameController gameController;
 
 
 	[SerializeField] float movingBound;
 	[SerializeField] float movingSpeed;
 
 	private Vector3 movingDir = Vector3.right;
+	private float timeFromLastDrop = 0;
+
+	private void Start () {
+		timeFromLastDrop = 0;
+	}
 
 	// Update is called once per frame
-	void Update()
+	private void Update ()
     {
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		timeFromLastDrop += Time.deltaTime;
+		if (Input.GetKeyDown(KeyCode.Space) && timeFromLastDrop > gameController.GetRateOfDroping()) {
 			MeatPartController meatPart = GenerateBlock.GetBlock();
 			meatPart.transform.SetParent(transform);
 			meatPart.transform.localPosition = Vector3.zero;
 			meatPart.transform.SetParent(gameTransform);
 			meatPart.Setup(movingDir, meatPartsManager);
 			meatPart.EnableGravity(true);
+			timeFromLastDrop = 0;
 		}
 
 		transform.position += movingDir * movingSpeed * Time.deltaTime;
