@@ -4,26 +4,50 @@ using UnityEngine;
 
 public class generateBlock : MonoBehaviour
 {
-    public List<MeatPartController> allBlocks;
+    [SerializeField] List<MeatPartController> normalBlocks;
+	[SerializeField] List<MeatPartController> humanBlocks;
 
-    private MeatPartController next;
+	private MeatPartController next;
+	private bool lastSuccess = true;
 
-    //public GameObject[] blockArray;
-    // Start is called before the first frame update
-    void Start()
+
+	void Start()
     {
-        next =  Instantiate(allBlocks[Random.Range(0, allBlocks.Count)]);
-        next.transform.position = new Vector3(6.6f, 5.8f, 0);
-        next.EnableGravity(false);
-        
-    }
+		next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)]);
+		PrepareNextMeatPart();
+		lastSuccess = true;
+
+
+	}
 
     public MeatPartController GetBlock(){
         MeatPartController ret =  next;
-        next = Instantiate(allBlocks[Random.Range(0, allBlocks.Count)]);
-        next.transform.position = new Vector3(6.6f, 5.8f, 0);
+		if (lastSuccess) {
+			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)]);
+		} else {
+			next = Instantiate(humanBlocks[Random.Range(0, humanBlocks.Count)]);
+		}
+
+		PrepareNextMeatPart();
+		return ret;
+	}
+
+	public void SetLastSuccess (bool success) {
+		
+		if (lastSuccess != success && success) {
+			Destroy(next.gameObject);
+			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)]);
+		} else if (lastSuccess != success && !success) {
+			Destroy(next.gameObject);
+			next = Instantiate(humanBlocks[Random.Range(0, humanBlocks.Count)]);
+		}
+		lastSuccess = success;
+		PrepareNextMeatPart();
+	}
+
+	public void PrepareNextMeatPart () {
+		next.transform.position = new Vector3(6.6f, 5.8f, 0);
 		next.EnableGravity(false);
-        return ret;
 	}
     
 }
