@@ -29,6 +29,6 @@ public class generateBlock : MonoBehaviour
     }
 
     public MeatPartController GetBlock(){
-		return Instantiate(allBlocks[0]);
+		return Instantiate(allBlocks[Random.Range(0, allBlocks.Count)]);
 	}
 }

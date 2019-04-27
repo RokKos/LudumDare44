@@ -9,8 +9,8 @@ public class MeatPartController : MonoBehaviour
 
 	private Transform gameTransform;
 
-	public void Setup (Transform _gameTransform) {
-		gameTransform = _gameTransform;
+	public void Setup (Vector3 movingDir) {
+		rigidbody.AddForce(movingDir, ForceMode.Impulse);
 	}
 
 	private void OnCollisionEnter (Collision collision) {

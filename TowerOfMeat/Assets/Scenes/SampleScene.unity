@@ -289,6 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allBlocks:
   - {fileID: 3045829796637420322, guid: 09460c35aa80bcd4297d3fb10afd60f7, type: 3}
+  - {fileID: 3435274486040540778, guid: 240977fc50612734e8d8babf4b195dec, type: 3}
+  - {fileID: 2024312461845068824, guid: 3f1694bab3243a84c8eece062faa63dc, type: 3}
 --- !u!4 &867101611
 Transform:
   m_ObjectHideFlags: 0
@@ -552,10 +554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25aa9db03e1bcc4e8cdc89de2006587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meatPartPrefab:
-  - {fileID: 3045829796637420322, guid: 09460c35aa80bcd4297d3fb10afd60f7, type: 3}
-  - {fileID: 3045829796637420322, guid: 09460c35aa80bcd4297d3fb10afd60f7, type: 3}
-  - {fileID: 3045829796637420322, guid: 09460c35aa80bcd4297d3fb10afd60f7, type: 3}
   gameTransform: {fileID: 1406415427}
   GenerateBlock: {fileID: 867101610}
   movingBound: 2
