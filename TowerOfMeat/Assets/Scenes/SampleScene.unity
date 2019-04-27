@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 1659623594}
   m_Layer: 0
   m_Name: Altar
-  m_TagString: Untagged
+  m_TagString: Altar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,6 +614,7 @@ MonoBehaviour:
   GenerateBlock: {fileID: 867101610}
   meatPartsManager: {fileID: 867101612}
   movingBound: 2
+  movingSpeed: 2
 --- !u!1 &2133069376
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class DropingController : MonoBehaviour
 
 
 	[SerializeField] float movingBound;
+	[SerializeField] float movingSpeed;
 
 	private Vector3 movingDir = Vector3.right;
 
@@ -26,7 +27,7 @@ public class DropingController : MonoBehaviour
 			meatPart.EnableGravity(true);
 		}
 
-		transform.position += movingDir * Time.deltaTime;
+		transform.position += movingDir * movingSpeed * Time.deltaTime;
 		if (Mathf.Abs(transform.position.x) > movingBound) {
 			movingDir.x *= -1;
 			transform.position += movingDir * Time.deltaTime;

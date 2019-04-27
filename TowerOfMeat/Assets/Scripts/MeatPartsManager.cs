@@ -41,6 +41,7 @@ public class MeatPartsManager : MonoBehaviour
 			meatSucces(true);
 			return true;
 		} else {
+			meatPartsInScene.Remove(meatPart);
 			Destroy(meatPart.gameObject);
 			meatSucces(false);
 			return false;
