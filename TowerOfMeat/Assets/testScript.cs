@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class levelDone : MonoBehaviour
+public class testScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject holder;
@@ -41,14 +41,14 @@ public class levelDone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* Testing purposes
+        
         if (Input.GetMouseButtonDown(0) && showEnd == false){
             showEndLevel(true);
         }
         if(Input.GetMouseButtonDown(1) && showEnd == false){
             showEndLevel(false);
         }
-        */
+        
         if(showEnd){
             Vector3 holderPos = holder.transform.position;
             if(count<130){
