@@ -695,6 +695,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612910015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1612910015, guid: 69720f44bf9d74d4c81b7835c6ba9462,
+    type: 3}
+  m_PrefabInstance: {fileID: 5321372496179112427}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d53819d79ed1e3439094d64add258dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659623592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logic
       objectReference: {fileID: 0}
+    - target: {fileID: 5321372495971140161, guid: 69720f44bf9d74d4c81b7835c6ba9462,
+        type: 3}
+      propertyPath: screamAudioController
+      value: 
+      objectReference: {fileID: 1612910015}
     - target: {fileID: 5321372495971140167, guid: 69720f44bf9d74d4c81b7835c6ba9462,
         type: 3}
       propertyPath: highLine

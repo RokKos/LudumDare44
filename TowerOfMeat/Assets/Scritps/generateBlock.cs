@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class generateBlock : MonoBehaviour
 {
-    [SerializeField] List<MeatPartController> normalBlocks;
+	[SerializeField] ScreamAudioController screamAudioController;
+
+	[SerializeField] List<MeatPartController> normalBlocks;
 	[SerializeField] List<MeatPartController> humanBlocks;
 
 	private List<bool> selectedHumanBlocks;
@@ -44,6 +46,7 @@ public class generateBlock : MonoBehaviour
 			maxNormalParts--;
 		} else {
 			next = SelectHumanBodyPart();
+			screamAudioController.PlayScream();
 		}
 
 		PrepareNextMeatPart();
