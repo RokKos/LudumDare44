@@ -30,7 +30,11 @@ public class clickPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(engageStartButton){
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Application.Quit();
+		}
+
+		if (engageStartButton){
             Vector3 holderPos = holder.transform.position;
             if(count>=10 && count<=30){
                 holderPos.y-=0.05f;

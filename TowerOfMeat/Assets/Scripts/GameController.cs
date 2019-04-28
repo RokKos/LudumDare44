@@ -38,6 +38,10 @@ public class GameController : MonoBehaviour
 			gameParent.SetActive(false);
 			updatedLevel = true;
 		}
+
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			SceneManager.LoadScene("Main Menu");
+		}
 	}
 
 	public float GetRateOfDroping () {
