@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
 	[SerializeField] Text meatLeftText;
+	[SerializeField] Text levelText;
 	[SerializeField] List<GameObject> bodySprites;
 
 	private const string meatText = "MEAT LEFT: ";
+	private const string levelTextString = "Level: ";
 
 	private void Start () {
 		foreach (GameObject bodySprite in bodySprites) {
@@ -20,6 +22,10 @@ public class UIController : MonoBehaviour
 
 	public void UpdateMeatLeftText (int numMeat) {
 		meatLeftText.text = meatText + numMeat;
+	}
+
+	public void UpdateLevelNum (int numLevel) {
+		levelText.text = levelTextString + numLevel;
 	}
 
 	public void EnableSprite (int ind, bool enable = true) {

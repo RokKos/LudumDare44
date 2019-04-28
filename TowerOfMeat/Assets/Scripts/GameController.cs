@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 	[SerializeField] List<LevelParameters> levels;
 	[SerializeField] generateBlock generateBlock;
 	[SerializeField] MeatPartsManager meatPartsManager;
+	[SerializeField] UIController uiController;
 
 	[SerializeField] GameObject LevelDonePatrent;
 	[SerializeField] testScript LevelDone;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour
     {
 		updatedLevel = false;
 		currLevel = PlayerPrefs.GetInt(kKeyLevel, 0);
+		uiController.UpdateLevelNum(currLevel + 1);
 		generateBlock.Setup(GetLives(), GetHumanPartsNum(), this);
 		gameParent.SetActive(true);
 		LevelDonePatrent.SetActive(false);
