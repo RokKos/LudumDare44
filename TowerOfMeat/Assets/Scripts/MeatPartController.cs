@@ -6,6 +6,7 @@ public class MeatPartController : MonoBehaviour {
 
 	[SerializeField] Rigidbody rigidbody;
 	[SerializeField] MeshRenderer mr;
+	[SerializeField] GameObject bloodSplat;
 
 	private MeatPartsManager meatPartsManager;
 	private bool firstHit = true;
@@ -29,6 +30,9 @@ public class MeatPartController : MonoBehaviour {
 			rigidbody.velocity = Vector3.zero;
 			meatPartsManager.AddMeatPart(this);
 			firstHit = false;
+			GameObject bS = Instantiate(bloodSplat, transform);
+			bS.transform.position = Vector3.zero;
+			Destroy(bS, 1);
 		}
 		
 	}

@@ -94,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6369765818929704433}
   mr: {fileID: 3959652447982001824}
+  bloodSplat: {fileID: 234901113695635510, guid: 975378bd1afe2c14194bc811ab50bc2a,
+    type: 3}
 --- !u!54 &6369765818929704433
 Rigidbody:
   m_ObjectHideFlags: 0
