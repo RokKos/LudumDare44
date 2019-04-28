@@ -393,6 +393,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6eb50767ba25e3f4b9f0f7b9767bd912, type: 2}
   generateBlock: {fileID: 5321372495971140161}
   meatPartsManager: {fileID: 5321372495971140167}
+  LevelDone: {fileID: 0}
 --- !u!1 &5433512794067735614
 GameObject:
   m_ObjectHideFlags: 0

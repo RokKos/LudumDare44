@@ -9,18 +9,28 @@ public class GameController : MonoBehaviour
 	[SerializeField] generateBlock generateBlock;
 	[SerializeField] MeatPartsManager meatPartsManager;
 
+	[SerializeField] GameObject LevelDonePatrent;
+	[SerializeField] levelDone LevelDone;
+	[SerializeField] GameObject gameParent;
+
 	private int currLevel = 0;
 	void Start()
     {
 		currLevel = 0;
 		generateBlock.Setup(GetLives(), GetHumanPartsNum(), this);
+		gameParent.SetActive(true);
+		LevelDonePatrent.SetActive(false);
 
 	}
 
 	private void Update () {
 		if (meatPartsManager.GetMaxMeatHeight() > GetLevelHeight()) {
 			currLevel++;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			LevelDonePatrent.SetActive(true);
+			LevelDone.showEndLevel(true);
+			gameParent.SetActive(false);
+
+			//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 	}
 
@@ -38,7 +48,10 @@ public class GameController : MonoBehaviour
 
 	public void PlayerLost () {
 		// TODO:
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		LevelDonePatrent.SetActive(true);
+		LevelDone.showEndLevel(false);
+		gameParent.SetActive(false);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 	private float GetLevelHeight () {
 		return levels[currLevel].LineHeight;

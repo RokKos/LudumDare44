@@ -86,11 +86,17 @@ public class generateBlock : MonoBehaviour
 	}
 
 	private MeatPartController SelectHumanBodyPart () {
+		if (maxHumanParts <= 0) {
+			gameController.PlayerLost();
+			return null;
+		}
+
 		int ind = 0;
+		int maxWhile = 500;
 		do {
 			ind = Random.Range(0, humanBlocks.Count);
-
-		} while (selectedHumanBlocks[ind]);
+			maxWhile--;
+		} while (selectedHumanBlocks[ind] && maxWhile > 0);
 
 		selectedHumanBlocks[ind] = true;
 		maxHumanParts--;

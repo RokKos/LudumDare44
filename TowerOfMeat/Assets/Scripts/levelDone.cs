@@ -11,19 +11,19 @@ public class levelDone : MonoBehaviour
     private bool showEnd = false;
     private float k = 0.2f;
 
-    public void showEndLevel(){
+    public void showEndLevel(bool success = true){
         showEnd = true;
     }
 
     void Start()
     {
-        
-    }
+		showEnd = false;
+	}
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && showEnd == false){
+        if (showEnd == false){
             showEndLevel();
         }
         if(showEnd){
