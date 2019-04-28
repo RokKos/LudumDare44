@@ -22,8 +22,8 @@ public class hitBoard : MonoBehaviour
         }
         Vector3 boardPos = board.transform.position;
         if(boardPos.x>6){
-            boardPos.x-=0.1f;
-            board.transform.position = boardPos;
+            //boardPos.x-=0.1f;
+            //board.transform.position = boardPos;
         }
     }
 }
