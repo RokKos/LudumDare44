@@ -9,6 +9,7 @@ public class DropingController : MonoBehaviour
 	[SerializeField] generateBlock GenerateBlock;
 	[SerializeField] MeatPartsManager meatPartsManager;
 	[SerializeField] GameController gameController;
+	[SerializeField] AudioSplatterController audioSplatterController;
 
 
 	[SerializeField] float movingBound;
@@ -30,7 +31,7 @@ public class DropingController : MonoBehaviour
 			meatPart.transform.SetParent(transform);
 			meatPart.transform.localPosition = Vector3.zero;
 			meatPart.transform.SetParent(gameTransform);
-			meatPart.Setup(movingDir, meatPartsManager);
+			meatPart.Setup(movingDir, meatPartsManager, audioSplatterController);
 			meatPart.EnableGravity(true);
 			timeFromLastDrop = 0;
 		}

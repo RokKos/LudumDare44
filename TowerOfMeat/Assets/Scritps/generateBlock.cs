@@ -71,7 +71,7 @@ public class generateBlock : MonoBehaviour
 	}
 
 	public void PrepareNextMeatPart () {
-		next.transform.position = new Vector3(6.5f, 8f, 0);
+		next.transform.position = new Vector3(3.26f, 4.25f, 0);
 		next.EnableGravity(false);
 	}
 

@@ -9,22 +9,19 @@ public class MeatPartController : MonoBehaviour {
 	[SerializeField] GameObject bloodSplat;
 
 	private MeatPartsManager meatPartsManager;
+	private AudioSplatterController audioSplatterController;
 	private bool firstHit = true;
 
 	private const string kAltarTag = "Altar";
 
-	public void Setup (Vector3 movingDir, MeatPartsManager _meatPartsManager) {
+	public void Setup (Vector3 movingDir, MeatPartsManager _meatPartsManager, AudioSplatterController _audioSplatterController) {
 		rigidbody.AddForce(movingDir, ForceMode.Impulse);
 		meatPartsManager = _meatPartsManager;
 		firstHit = true;
+		audioSplatterController = _audioSplatterController;
 	}
 
 	private void OnCollisionEnter (Collision collision) {
-		//if (firstHit && collision.collider.tag == kAltarTag) {
-		//	meatPartsManager.AddMeatPart(this);
-		//}
-
-
 
 		if (firstHit) {
 			rigidbody.velocity = Vector3.zero;
@@ -33,6 +30,9 @@ public class MeatPartController : MonoBehaviour {
 			GameObject bS = Instantiate(bloodSplat, transform);
 			bS.transform.position = Vector3.zero;
 			Destroy(bS, 1);
+			audioSplatterController.PlaySplatter();
+		} else if (Random.Range(0, 100) > 77) {
+			audioSplatterController.PlaySplatter();
 		}
 		
 	}
