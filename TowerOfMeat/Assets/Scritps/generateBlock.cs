@@ -6,6 +6,7 @@ public class generateBlock : MonoBehaviour
 {
 	[SerializeField] ScreamAudioController screamAudioController;
 	[SerializeField] GameController gameController;
+	[SerializeField] Transform gameParent;
 	[SerializeField] UIController uiController;
 
 	[SerializeField] List<MeatPartController> normalBlocks;
@@ -24,7 +25,7 @@ public class generateBlock : MonoBehaviour
 
 	void Start()
     {
-		next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)]);
+		next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)], gameParent);
 		maxNormalParts--;
 		PrepareNextMeatPart();
 		lastSuccess = true;
@@ -44,7 +45,7 @@ public class generateBlock : MonoBehaviour
     public MeatPartController GetBlock(){
         MeatPartController ret =  next;
 		if (lastSuccess) {
-			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)]);
+			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)], gameParent);
 			maxNormalParts--;
 		} else {
 			next = SelectHumanBodyPart();
@@ -68,7 +69,7 @@ public class generateBlock : MonoBehaviour
 		if (lastSuccess != success && success) {
 			Destroy(next.gameObject);
 			maxHumanParts++;
-			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)]);
+			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)], gameParent);
 			maxNormalParts--;
 		} else if (lastSuccess != success && !success) {
 			Destroy(next.gameObject);
@@ -100,7 +101,7 @@ public class generateBlock : MonoBehaviour
 
 		selectedHumanBlocks[ind] = true;
 		maxHumanParts--;
-		return Instantiate(humanBlocks[ind]);
+		return Instantiate(humanBlocks[ind], gameParent);
 
 	}
     
