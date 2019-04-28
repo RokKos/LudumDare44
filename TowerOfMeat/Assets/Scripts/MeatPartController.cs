@@ -5,20 +5,25 @@ using UnityEngine;
 public class MeatPartController : MonoBehaviour {
 
 	[SerializeField] Rigidbody rigidbody;
+	[SerializeField] Collider collider;
 	[SerializeField] MeshRenderer mr;
 	[SerializeField] GameObject bloodSplat;
 
 	private MeatPartsManager meatPartsManager;
 	private AudioSplatterController audioSplatterController;
 	private bool firstHit = true;
+	private Vector3 originalScale = Vector3.one * 100;
 
 	private const string kAltarTag = "Altar";
-
+	private void Start () {
+		originalScale = transform.localScale;
+	}
 	public void Setup (Vector3 movingDir, MeatPartsManager _meatPartsManager, AudioSplatterController _audioSplatterController) {
 		rigidbody.AddForce(movingDir, ForceMode.Impulse);
 		meatPartsManager = _meatPartsManager;
 		firstHit = true;
 		audioSplatterController = _audioSplatterController;
+
 	}
 
 	private void OnCollisionEnter (Collision collision) {
@@ -47,5 +52,13 @@ public class MeatPartController : MonoBehaviour {
 
 	public Rigidbody GetRigidbody () {
 		return rigidbody;
+	}
+
+	public Collider GetCollider () {
+		return collider;
+	}
+
+	public Vector3 GetOriginalScale () {
+		return originalScale;
 	}
 }

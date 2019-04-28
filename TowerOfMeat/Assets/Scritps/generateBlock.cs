@@ -81,9 +81,10 @@ public class generateBlock : MonoBehaviour
 	}
 
 	public void PrepareNextMeatPart () {
-		next.transform.position = new Vector3(3.26f, 4.25f, 0);
+		//next.transform.localScale = next.GetOriginalScale() / 3.0f;
+		next.transform.position = new Vector3(2.281f, 8.313f, 0);
 		next.GetRigidbody().isKinematic = true;
-		//next.EnableGravity(false);
+		next.GetCollider().enabled = false;
 	}
 
 	private MeatPartController SelectHumanBodyPart () {

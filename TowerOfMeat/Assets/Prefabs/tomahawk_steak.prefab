@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 7187031499201577458}
+  collider: {fileID: 6363220129545294179}
   mr: {fileID: 6964351209718698815}
   bloodSplat: {fileID: 5199399828107743627, guid: 1e1cead9554e05d49bbae6e6e863e3c0,
     type: 3}
