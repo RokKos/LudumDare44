@@ -11,6 +11,7 @@ public class backToMenu : MonoBehaviour
 
     void OnMouseOver(){
         if (Input.GetMouseButtonDown(0)){
+            Debug.Log("a");
             if(rollingCredits==false){
                 rollingCredits = true;
             }
@@ -20,6 +21,7 @@ public class backToMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
