@@ -13,24 +13,28 @@ public class GameController : MonoBehaviour
 	[SerializeField] levelDone LevelDone;
 	[SerializeField] GameObject gameParent;
 
+	private const string kKeyLevel = "LevelNum";
 	private int currLevel = 0;
+
+	private bool updatedLevel = false;
 	void Start()
     {
-		currLevel = 0;
+		updatedLevel = false;
+		currLevel = PlayerPrefs.GetInt(kKeyLevel, 0);
 		generateBlock.Setup(GetLives(), GetHumanPartsNum(), this);
 		gameParent.SetActive(true);
 		LevelDonePatrent.SetActive(false);
-
 	}
 
 	private void Update () {
-		if (meatPartsManager.GetMaxMeatHeight() > GetLevelHeight()) {
-			currLevel++;
+		if (!updatedLevel && meatPartsManager.GetMaxMeatHeight() > GetLevelHeight()) {
+
+			int levelNum = Mathf.Min(levels.Count - 1, PlayerPrefs.GetInt(kKeyLevel, 0) + 1);
+			PlayerPrefs.SetInt(kKeyLevel, levelNum);
 			LevelDonePatrent.SetActive(true);
 			LevelDone.showEndLevel(true);
 			gameParent.SetActive(false);
-
-			//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			updatedLevel = true;
 		}
 	}
 
@@ -47,13 +51,11 @@ public class GameController : MonoBehaviour
 	}
 
 	public void PlayerLost () {
-		// TODO:
 		LevelDonePatrent.SetActive(true);
 		LevelDone.showEndLevel(false);
 		gameParent.SetActive(false);
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
-	private float GetLevelHeight () {
+	public float GetLevelHeight () {
 		return levels[currLevel].LineHeight;
 	}
 }

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MeatPartsManager : MonoBehaviour
 {
-
+	[SerializeField] GameController gameController;
 	[SerializeField] generateBlock GenerateBlock;
+	[SerializeField] HighLine LevelLine;
 	[SerializeField] HighLine highLine;
 	[SerializeField] float bufferOffset;
 
@@ -17,6 +18,7 @@ public class MeatPartsManager : MonoBehaviour
 	private void Start () {
 		meatSucces += GenerateBlock.SetLastSuccess;
 		highLine.gameObject.SetActive(false);
+		LevelLine.transform.position = new Vector3(LevelLine.transform.position.x, gameController.GetLevelHeight(), LevelLine.transform.position.z);
 	}
 
 

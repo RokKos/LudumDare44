@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8887031b3efd004987bc07d3eeda729, type: 3}
-  m_Name: LevelParameters01
+  m_Name: LevelParameters3
   m_EditorClassIdentifier: 
-  SpeedOfSaw: 2
-  NumberOfElement: 20
+  SpeedOfSaw: 2.4
+  NumberOfElement: 17
   Lifes: 5
   RateOfDroping: 0.5
-  LineHeight: 4
+  LineHeight: 5.5
