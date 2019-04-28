@@ -44,4 +44,8 @@ public class MeatPartController : MonoBehaviour {
 	public float GetTopPointOfMeat () {
 		return transform.position.y + mr.bounds.extents.y;
 	}
+
+	public Rigidbody GetRigidbody () {
+		return rigidbody;
+	}
 }

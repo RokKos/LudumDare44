@@ -51,6 +51,7 @@ public class generateBlock : MonoBehaviour
 		if (maxHumanParts < 0 || maxNormalParts < 0) {
 
 		}
+		ret.GetRigidbody().isKinematic = false;
 		return ret;
 	}
 
@@ -72,7 +73,8 @@ public class generateBlock : MonoBehaviour
 
 	public void PrepareNextMeatPart () {
 		next.transform.position = new Vector3(3.26f, 4.25f, 0);
-		next.EnableGravity(false);
+		next.GetRigidbody().isKinematic = true;
+		//next.EnableGravity(false);
 	}
 
 	private MeatPartController SelectHumanBodyPart () {

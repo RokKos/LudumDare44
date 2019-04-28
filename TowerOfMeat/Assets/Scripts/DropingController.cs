@@ -32,7 +32,7 @@ public class DropingController : MonoBehaviour
 			meatPart.transform.localPosition = Vector3.zero;
 			meatPart.transform.SetParent(gameTransform);
 			meatPart.Setup(movingDir, meatPartsManager, audioSplatterController);
-			meatPart.EnableGravity(true);
+			//meatPart.EnableGravity(true);
 			timeFromLastDrop = 0;
 		}
 

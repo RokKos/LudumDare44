@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
 	[SerializeField] List<LevelParameters> levels;
 	[SerializeField] generateBlock generateBlock;
+	[SerializeField] MeatPartsManager meatPartsManager;
 
 	private int currLevel = 0;
 	void Start()
@@ -14,6 +15,13 @@ public class GameController : MonoBehaviour
 		currLevel = 0;
 		generateBlock.Setup(GetLives(), GetHumanPartsNum(), this);
 
+	}
+
+	private void Update () {
+		if (meatPartsManager.GetMaxMeatHeight() > GetLevelHeight()) {
+			currLevel++;
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
 	}
 
 	public float GetRateOfDroping () {
@@ -30,6 +38,9 @@ public class GameController : MonoBehaviour
 
 	public void PlayerLost () {
 		// TODO:
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+	private float GetLevelHeight () {
+		return levels[currLevel].LineHeight;
 	}
 }

@@ -51,7 +51,7 @@ public class MeatPartsManager : MonoBehaviour
 		
 	}
 
-	private float GetMaxMeatHeight () {
+	public float GetMaxMeatHeight () {
 		float maxY = -float.MaxValue;
 		foreach (MeatPartController meat in meatPartsInScene) {
 			maxY = Mathf.Max(meat.GetTopPointOfMeat(), maxY);
