@@ -25,7 +25,7 @@ public class DropingController : MonoBehaviour
 	private void Update ()
     {
 		timeFromLastDrop += Time.deltaTime;
-		if (Input.GetKeyDown(KeyCode.Space) && timeFromLastDrop > gameController.GetRateOfDroping()) {
+		if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && timeFromLastDrop > gameController.GetRateOfDroping()) {
 			MeatPartController meatPart = GenerateBlock.GetBlock();
 			meatPart.transform.SetParent(transform);
 			meatPart.transform.localPosition = Vector3.zero;
