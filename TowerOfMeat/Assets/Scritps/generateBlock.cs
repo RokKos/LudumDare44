@@ -18,6 +18,7 @@ public class generateBlock : MonoBehaviour
 	private bool lastSuccess = true;
 	private int maxHumanParts = 0;
 	private int maxNormalParts = 0;
+	private int lastSelectedHumanPart = 0;
 
 
 	delegate void PlayerLost ();
@@ -29,6 +30,7 @@ public class generateBlock : MonoBehaviour
 		maxNormalParts--;
 		PrepareNextMeatPart();
 		lastSuccess = true;
+		lastSelectedHumanPart = 0;
 	}
 
 	public void Setup (int humanParts, int normalParts, GameController gameController) {
@@ -38,6 +40,7 @@ public class generateBlock : MonoBehaviour
 		}
 		maxHumanParts = humanParts;
 		maxNormalParts = normalParts;
+		uiController.UpdateMeatLeftText(maxNormalParts);
 		playerLost += gameController.PlayerLost;
 
 	}
@@ -70,6 +73,7 @@ public class generateBlock : MonoBehaviour
 			Destroy(next.gameObject);
 			maxHumanParts++;
 			next = Instantiate(normalBlocks[Random.Range(0, normalBlocks.Count)], gameParent);
+			uiController.EnableSprite(lastSelectedHumanPart, false);
 			maxNormalParts--;
 		} else if (lastSuccess != success && !success) {
 			Destroy(next.gameObject);
@@ -101,6 +105,8 @@ public class generateBlock : MonoBehaviour
 		} while (selectedHumanBlocks[ind] && maxWhile > 0);
 
 		selectedHumanBlocks[ind] = true;
+		lastSelectedHumanPart = ind;
+		uiController.EnableSprite(ind);
 		maxHumanParts--;
 		return Instantiate(humanBlocks[ind], gameParent);
 

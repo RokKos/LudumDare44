@@ -349,6 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screamAudioController: {fileID: 1612910015}
   gameController: {fileID: 1153985426}
+  gameParent: {fileID: 0}
   uiController: {fileID: 3641417698307201809}
   normalBlocks:
   - {fileID: 2024312461845068824, guid: 3f1694bab3243a84c8eece062faa63dc, type: 3}
@@ -357,11 +358,11 @@ MonoBehaviour:
   - {fileID: 2024312461845068824, guid: 3f1694bab3243a84c8eece062faa63dc, type: 3}
   - {fileID: 2321935329729126468, guid: fd6fe2cd5c5c5ca4c8c3a6de052a3b31, type: 3}
   humanBlocks:
+  - {fileID: 3442013647113232453, guid: 09ab1d47aed28b248b3135835b2e90aa, type: 3}
+  - {fileID: 3442013647113232453, guid: 09ab1d47aed28b248b3135835b2e90aa, type: 3}
   - {fileID: 3435274486040540778, guid: 240977fc50612734e8d8babf4b195dec, type: 3}
   - {fileID: 657597486, guid: d96bc5cdef56beb48ba9dea94ca675f9, type: 3}
-  - {fileID: 3442013647113232453, guid: 09ab1d47aed28b248b3135835b2e90aa, type: 3}
   - {fileID: 657597486, guid: d96bc5cdef56beb48ba9dea94ca675f9, type: 3}
-  - {fileID: 3442013647113232453, guid: 09ab1d47aed28b248b3135835b2e90aa, type: 3}
 --- !u!114 &5321372495971140167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +394,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6eb50767ba25e3f4b9f0f7b9767bd912, type: 2}
   generateBlock: {fileID: 5321372495971140161}
   meatPartsManager: {fileID: 5321372495971140167}
+  LevelDonePatrent: {fileID: 0}
   LevelDone: {fileID: 0}
+  gameParent: {fileID: 0}
 --- !u!1 &5433512794067735614
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,3 +441,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meatLeftText: {fileID: 0}
+  bodySprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
