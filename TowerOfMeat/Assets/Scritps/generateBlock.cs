@@ -5,6 +5,8 @@ using UnityEngine;
 public class generateBlock : MonoBehaviour
 {
 	[SerializeField] ScreamAudioController screamAudioController;
+	[SerializeField] GameController gameController;
+	[SerializeField] UIController uiController;
 
 	[SerializeField] List<MeatPartController> normalBlocks;
 	[SerializeField] List<MeatPartController> humanBlocks;
@@ -52,9 +54,12 @@ public class generateBlock : MonoBehaviour
 		PrepareNextMeatPart();
 
 		if (maxHumanParts < 0 || maxNormalParts < 0) {
-
+			gameController.PlayerLost();
 		}
 		ret.GetRigidbody().isKinematic = false;
+
+		uiController.UpdateMeatLeftText(maxNormalParts);
+
 		return ret;
 	}
 
