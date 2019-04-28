@@ -234,13 +234,8 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
-  m_IsActive: 0
---- !u!4 &6617601943131710793
-=======
   m_IsActive: 1
 --- !u!4 &6617601942433465632
->>>>>>> Level completed final tweaks hopefully
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3995,15 +3990,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevel
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 400006, guid: b2ffe6e34fa2b0745ac3edaccdcb25f8, type: 3}
-=======
+
     - target: {fileID: 100000, guid: ce8ea81b450f17e42be3003bedd85f35, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce8ea81b450f17e42be3003bedd85f35, type: 3}
->>>>>>> Level completed final tweaks hopefully
       propertyPath: m_LocalPosition.x
       value: 1.22
       objectReference: {fileID: 0}
@@ -4047,7 +4039,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 2300072, guid: b2ffe6e34fa2b0745ac3edaccdcb25f8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4204,16 +4195,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5d054144458c4cf43a45c0ed9f6a7211, type: 2}
-=======
-    - target: {fileID: 2300000, guid: ce8ea81b450f17e42be3003bedd85f35, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c87f4f6a67095834482196bf2a547119, type: 2}
-    - target: {fileID: 2300000, guid: ce8ea81b450f17e42be3003bedd85f35, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
->>>>>>> Level completed final tweaks hopefully
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8ea81b450f17e42be3003bedd85f35, type: 3}
 --- !u!1 &9007933991596269210 stripped
