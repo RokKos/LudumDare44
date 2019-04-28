@@ -63,7 +63,7 @@ public class testScript : MonoBehaviour
         }
         if(Input.GetKeyDown("space")){
             if(count>=130){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
