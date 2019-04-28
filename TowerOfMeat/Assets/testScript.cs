@@ -13,6 +13,7 @@ public class testScript : MonoBehaviour
     public GameObject nextLvl;
     private int count = 0;
     private bool showEnd = false;
+    private bool moveBoardAndProgress = false;
     private float k = 0.2f;
 
     public void showEndLevel(bool success){
@@ -53,18 +54,30 @@ public class testScript : MonoBehaviour
             Vector3 holderPos = holder.transform.position;
             if(count<130){
                 holderPos.y-=k;
+                count++;
             }
             k-=0.0015f;
-            count++;
+            
             holder.transform.position = holderPos;
-            //if(count==175){
-            //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //} 
+            
         }
+        //Debug.Log(count);
+            if(count==130){
         if(Input.GetKeyDown("space")){
-            if(count>=130){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            moveBoardAndProgress=true;
+            k=0.1f;}
+        }
+        if(moveBoardAndProgress){
+            Vector3 holderPos = holder.transform.position;
+            if(count<265){
+                holderPos.y+=k;
+                count++;
             }
+            k+=0.0015f;
+            holder.transform.position = holderPos;
+        }
+        if(count>=265){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
