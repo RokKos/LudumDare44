@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 	[SerializeField] MeatPartsManager meatPartsManager;
 
 	[SerializeField] GameObject LevelDonePatrent;
-	[SerializeField] levelDone LevelDone;
+	[SerializeField] testScript LevelDone;
 	[SerializeField] GameObject gameParent;
 
 	private const string kKeyLevel = "LevelNum";

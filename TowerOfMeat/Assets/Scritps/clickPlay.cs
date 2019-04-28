@@ -44,6 +44,7 @@ public class clickPlay : MonoBehaviour
             holder.transform.position = holderPos;
             if(count==175){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+				PlayerPrefs.DeleteAll();
             }
         }   
     }
